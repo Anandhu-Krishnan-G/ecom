@@ -10,7 +10,22 @@ class CategoryAdmin(admin.ModelAdmin):
 
 
 
+
+class AdditionalinfoTabular(admin.TabularInline):
+    model=Additional_infromation
+
+class AdditionalImageTabular(admin.TabularInline):
+    model=Additional_image
+
+class ProductAdmin(admin.ModelAdmin):
+    inlines=[AdditionalinfoTabular,AdditionalImageTabular]
+
+
+
+
+
 admin.site.register(Slider)
 admin.site.register(Banner)
 admin.site.register(MainCategory)
 admin.site.register(Category,CategoryAdmin)
+admin.site.register(Product,ProductAdmin)
